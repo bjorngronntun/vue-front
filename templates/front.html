@@ -19,7 +19,9 @@
           console.log("Mounting");
           this.$http.get('https://limitless-basin-43981.herokuapp.com/').then(
             function(response) {
-              console.log(response);
+              var nodes = response.data.nodes;
+              var edges = response.data.edges;
+              console.log(nodes);
             },
             function() {
               console.log('Error');
