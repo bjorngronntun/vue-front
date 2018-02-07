@@ -29,8 +29,10 @@
             function(response) {
               var elements = response.data.elements;
               var cy = cytoscape(
-                container: document.getElementById("graph-window"),
-                elements: elements
+                {
+                  container: document.getElementById("graph-window"),
+                  elements: elements
+                }
               );
             },
             function() {
