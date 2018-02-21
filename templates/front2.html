@@ -39,8 +39,13 @@
               );
               cy.nodes().filter('[weight > 0.3]').style('background-color', 'blue');
               cy.nodes().filter('[weight > 0.7]').style('background-color', 'red');
+              /*
               cy.nodes().filter('[weight > 0.7]').forEach(function(ele) {
                 console.log( ele.id() );
+              });
+              */
+              cy.nodes().on('tap', function(evt) {
+                console.log('tap' + evt.target.id());
               });
 
             },
