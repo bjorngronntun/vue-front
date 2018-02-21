@@ -10,7 +10,7 @@
       #graph-window {
         width: 500px;
         height: 500px;
-        background: gold;
+        background: white;
       }
     </style>
   </head>
@@ -37,6 +37,7 @@
                   }
                 }
               );
+              cy.nodes().filter('[weight > 0.5]').style('background-color', 'red');
             },
             function() {
               console.log('Error');
