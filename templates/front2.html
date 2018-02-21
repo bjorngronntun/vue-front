@@ -37,11 +37,9 @@
                   }
                 }
               );
-              cy.nodes().filter('[weight > 0.5]').style('background-color', 'blue').update();
-              cy.on('tap', 'node', function(evt) {
-                var node = evt.target;
-                node.style('background-color', 'red');
-              });
+              cy.nodes().filter('[weight > 0.3]').style('background-color', 'blue').update();
+              cy.nodes().filter('[weight > 0.7]').style('background-color', 'red').update();
+
             },
             function() {
               console.log('Error');
