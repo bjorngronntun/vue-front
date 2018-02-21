@@ -32,6 +32,7 @@
       </div>
     </div>
     <script>
+      var knapp = document.getElementById("knapp");
       new Vue({
         el: "#app",
         mounted() {
@@ -58,6 +59,10 @@
               cy.nodes().on('tap', function(evt) {
                 console.log('tap' + evt.target.id());
               });
+
+              knapp.onclick = function() {
+                cy.nodes().filter('weight > 0.7').style('background-color', 'green');
+              }
 
             },
             function() {
