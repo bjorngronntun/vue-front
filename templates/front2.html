@@ -24,7 +24,7 @@
       new Vue({
         el: "#app",
         mounted() {
-          console.log("Mounting");
+          // console.log("Mounting");
           this.$http.get('https://limitless-basin-43981.herokuapp.com/graph2').then(
             function(response) {
               var elements = response.data.elements;
@@ -39,6 +39,9 @@
               );
               cy.nodes().filter('[weight > 0.3]').style('background-color', 'blue');
               cy.nodes().filter('[weight > 0.7]').style('background-color', 'red');
+              cy.nodes().filter('[weight > 0.7]').forEach(function() {
+                console.log( ele.id() );
+              });
 
             },
             function() {
