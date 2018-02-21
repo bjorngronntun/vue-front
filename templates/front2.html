@@ -61,7 +61,8 @@
               });
 
               knapp.onclick = function() {
-                cy.nodes().filter('weight > 0.7').style('background-color', 'green');
+                console.log("Button clicked");
+                cy.nodes().filter('weight > 0.7').style('background-color', 'green').update();
               }
 
             },
